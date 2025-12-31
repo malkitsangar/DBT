@@ -11,7 +11,7 @@ HOUR(TO_TIMESTAMP(STARTED_AT)) AS HOUR_STARTED_AT,
 MONTH(TO_TIMESTAMP(STARTED_AT)) AS MONTH_STARTED_AT
 
 from
-{{ source('demo', 'bike') }}
+{{ ref('stg_bike') }}
 WHERE STARTED_AT != 'started_at'
 
 )
